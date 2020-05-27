@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+        <title>{{ title }}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../../static/css/index.css" rel="stylesheet" media="screen">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Account of {{ username }}</h1>
+        <br>
+        <form action="" method="POST">
+            <input type="text" placeholder="Username" name="username" id="only" value={{username}} value="{{request.form.username}}">
+            <input type="text" placeholder="Password" name="password" id="only" value={{password}} value="{{request.form.password}}">
+            <input class="button" type="submit" value="Change">
+        </form>
+        <a href="{{ url_for('home', username=username) }}" class="settings">back to home</a>
+        <a href="{{ url_for('delete_login', username=username) }}" class="settings">delete account</a>
+        {% if error %}
+        <p class="error"><strong>Error:</strong> {{ error }}
+        {% endif %}
+        </div>
+    </body>
+</html>

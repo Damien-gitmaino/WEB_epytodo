@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>create page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../static/css/index.css" rel="stylesheet" media="screen">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Create account</h1>
+        <br>
+        <form action="" method="post">
+        <input type="text" id="only" placeholder="Username" name="username" value="{{request.form.username}}">
+        <input type="password" id="only" placeholder="Password" name="password" value="{{request.form.password}}">
+        <input class="button" type="submit" value="Create">
+        </form>
+        <form action="/" method="GET">
+            <input class="settings" type="submit" value="Back to login">
+        </form>
+        {% if error %}
+        <p class="error"><strong>Error:</strong> {{ error }}
+        {% endif %}
+        </div>
+    </body>
+</html>

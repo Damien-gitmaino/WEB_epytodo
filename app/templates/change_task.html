@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>create task page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../static/css/index.css" rel="stylesheet" media="screen">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Create task</h1>
+        <br>
+        <form action="" method="post">
+        <input type="text" id="only" placeholder="name" name="name" value="{{request.form.name}}" value={{last_name}}>
+        <input type="date" id="start" name="date_end" value="{{request.form.date_end}}" value="{{last_date_end}}" min="date-du-jour" max="3210-12-31">
+        <select type="text" id="status" name="status" value="{{request.form.status}}" value="{{last_statue}}">
+            <option value="To do">To do</option>
+            <option value="In progress">In progress</option>
+            <option value="Ends">Ends</option>
+        </select>
+        <input class="settings" type="submit" value="Change">
+        </form>
+        <form action="{{ url_for('home', username=username) }}" method="GET">
+            <input class="settings" type="submit" value="Back to home">
+        </form>
+        {% if error %}
+        <p class="error"><strong>Error:</strong> {{ error }}
+        {% endif %}
+        </div>
+    </body>
+</html>

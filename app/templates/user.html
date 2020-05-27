@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>{{ title }}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../static/css/index.css" rel="stylesheet" media="screen">
+    </head>
+    <body>
+        <div class="container">
+            <h1>{{ task }}</h1>
+        <br>
+            <a href="{{ url_for('create_task', username=username) }}" class="settings">add new task</a>
+            <a href="{{ url_for('account', username=username) }}" class="settings">account</a>
+            <a href="{{ url_for('login') }}" class="settings">log out</a>
+        </div>
+        {{ tab }}
+    </body>
+</html>
